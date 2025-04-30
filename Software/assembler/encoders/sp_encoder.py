@@ -29,7 +29,7 @@ class SBTypeEncoder(InstructionEncoder):
         if label not in symbol_table:
             raise ValueError(f"undefined label: {label} at Address value {current_pc}")
         target_addr = symbol_table[label]
-        offset = target_addr 
+        offset = target_addr - current_pc
         offset = offset & 0xFFFF  
         immU = (offset >> 5) & 0x7FF
         immL = offset & 0x1F
