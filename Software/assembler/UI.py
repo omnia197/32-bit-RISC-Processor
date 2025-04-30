@@ -327,8 +327,9 @@ class PinkAssemblerGUI:
                     self.symbol_table[line_obj.label.name] = current_pc
                 if line_obj.instruction:
                     current_pc += 1
-            output_lines = []
-            self.memory = {}
+            
+            # Generate machine code
+            machine_codes = []
             current_pc = 0
             for line_obj in line_objects:
                 if line_obj.instruction:
@@ -344,24 +345,33 @@ class PinkAssemblerGUI:
                         else:
                             raise ValueError(f"Unknown opcode: {opcode}")
                         machine_code = encoder.encode(instruction, self.symbol_table, current_pc)
-                        hex_code = f"{machine_code:08X}"
-                        self.memory[current_pc] = {'hex': hex_code,'instruction': instruction,'source': line_obj.content.strip()}
-                        original_asm = line_obj.content.strip()
-                        output_lines.append(f"0x{current_pc:08X}: {hex_code}    {original_asm}")
+                        hex_code = f"{machine_code:08x}" 
+                        machine_codes.append(hex_code)
+                        self.memory[current_pc] = {
+                            'hex': hex_code,
+                            'instruction': instruction,
+                            'source': line_obj.content.strip()
+                        }
                         current_pc += 1
                     except Exception as e:
                         line_start = f"{line_obj.line_number}.0"
                         line_end = f"{line_obj.line_number}.end"
                         self.editor.tag_add('error', line_start, line_end)
                         raise e
+            
+
             self.output_text.config(state='normal')
             self.output_text.delete(1.0, tk.END)
-            self.output_text.insert(tk.END, "\n".join(output_lines))
+            self.output_text.insert(tk.END, "v2.0 raw\n")
+            
+            for hex_code in machine_codes:
+                self.output_text.insert(tk.END, hex_code + '\n')
+            
             self.output_text.config(state='disabled')
             self.update_symbol_table()
             self.update_memory_view()
             self.reset_simulation()
-            self.status_var.set(f"✓ Assembly successful - {len(output_lines)} instructions")
+            self.status_var.set(f"✓ Assembly successful - {len(machine_codes)} instructions")
             self.status_bar.configure(style='Success.TLabel')
         except Exception as e:
             self.status_var.set(f"✗ Assembly error: {str(e)}")
