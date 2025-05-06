@@ -53,8 +53,7 @@ class MIPSAssembler:
             machine_code = encoder.encode(
                 instruction=line.instruction,
                 symbol_table=self.symbol_table,
-                current_pc=line.instruction.address
-            )
+                current_pc=line.instruction.address)
             self.output.append(machine_code)
     
     def assemble(self, input_file: str, output_file: str) -> None:
