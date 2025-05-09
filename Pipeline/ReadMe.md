@@ -45,7 +45,8 @@ These arise from branch and jump instructions where the next instruction's addre
 
 *Branch Prediction* is employed to guess the likely outcome of a branch and continue fetching accordingly.
 
-*Pipeline Flushing and Bubbles* are used to clear wrongly fetched instructions if a prediction is incorrect. A bubble acts as a "no operation" (NOP) that fills the pipeline temporarily to avoid executing the wrong path.
+*Pipeline Flushing and Bubbles*: are used to clear wrongly fetched instructions if a prediction is incorrect. A bubble acts as a "no operation" (NOP) that fills the pipeline temporarily to avoid executing the wrong path.
+
 ---
 
 ## Branch Prediction
