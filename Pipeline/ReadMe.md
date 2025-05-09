@@ -55,5 +55,11 @@ To minimize the performance cost of control hazards, a 2-bit branch prediction m
 
 ---
 
+## Authors
+
+- Omnia Ayman Mohamed  
+- Alaa Ayman Mohamed  
+- Rahma Mostafa  
+
 
 
