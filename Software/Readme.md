@@ -150,7 +150,8 @@ Use the GUI to load your assembly file and process it without using terminal com
 This project is open source and free to use for educational and research purposes.
 
 ---
+## Authors
 
-## Author
-
-**Omnia Ayman**
+- Omnia Ayman Mohamed  
+- Alaa Ayman Mohamed  
+- Rahma Mostafa  
