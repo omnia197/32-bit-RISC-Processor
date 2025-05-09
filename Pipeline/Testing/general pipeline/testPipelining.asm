@@ -1,0 +1,8 @@
+SET R2, 2
+SET R3, 3
+SET R5, 5	
+LW R6, 8(R5)
+ADD R1, R2, R3
+ORI R4, R3, 7
+SUB R5, R2, R3
+SW R2, 10(R3)
