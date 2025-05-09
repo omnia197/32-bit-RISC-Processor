@@ -1,6 +1,6 @@
 # 32-bit RISC Processor Design Project
 
-## 🔗 Important Links
+## Important Links
 
 -  **[Project Documentation](https://github.com/omnia197/32-bit-RISC-Processor/tree/master/Project_files)**  
 
