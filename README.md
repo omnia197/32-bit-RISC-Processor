@@ -110,3 +110,12 @@ RISC_Processor_Project/
 ├── Software/                 
 │   ├── assembler/               # assembler code
 │   └── testing/                 # test codes for the assembler
+
+
+---
+
+## Authers
+
+- Omnia Ayman Mohamed  
+- Alaa Ayman Mohamed  
+- Rahma Mostafa  
