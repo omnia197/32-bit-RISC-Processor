@@ -54,6 +54,7 @@ These arise from branch and jump instructions where the next instruction's addre
 To minimize the performance cost of control hazards, a 2-bit branch prediction mechanism is integrated into the pipeline. This dynamic predictor uses a saturating counter to track the recent outcomes of branch instructions and make informed predictions
 
 **Authors**
+
 Omnia Ayman Mohamed 
 Alaa Ayman Mohamed 
 Rahma Mostafa 
