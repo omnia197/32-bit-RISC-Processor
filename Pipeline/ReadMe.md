@@ -14,7 +14,7 @@ This design introduces pipeline registers between each stage to carry both data 
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Implement a fully pipelined RISC processor with correct data flow.
 - Handle pipeline hazards: data, structural, and control.
@@ -22,16 +22,16 @@ This design introduces pipeline registers between each stage to carry both data 
 
 ---
 
-## ⚙️ Pipeline Enhancements
+##  Pipeline Enhancements
 
-### 🔄 Pipeline Registers
+###  Pipeline Registers
 Each stage passes values and signals to the next using specialized registers:
 - **IF/ID**: Holds fetched instruction and PC+4.
 - **ID/EX**: Holds decoded instruction, register values, and control signals.
 - **EX/MEM**: Stores ALU result and memory/control signals.
 - **MEM/WB**: Delivers final result to be written back to the register file.
 
-### 🔁 Hazard Management
+### Hazard Management
 Pipelining introduces timing conflicts known as hazards. These are situations where one instruction may depend on the result or decision of another that has not yet completed. Three main types of hazards are addressed in this project:
 **Data Hazards**
 These occur when an instruction depends on the result of a previous instruction that has not yet reached the write-back stage. To manage data hazards, we implement:
